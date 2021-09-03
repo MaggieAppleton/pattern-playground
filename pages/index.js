@@ -21,6 +21,8 @@ export default function Index({ posts }) {
             >
               <a>{post.data.title}</a>
             </Link>
+            {post.data.image && <img src={post.data.image} />}
+            {post.data.tags && post.data.tags.map((tag) => (<p>{tag}</p>))}
           </li>
         ))}
       </ul>
