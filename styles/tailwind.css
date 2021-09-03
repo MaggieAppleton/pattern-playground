@@ -5,12 +5,18 @@
 @layer base {
     h1 {
         @apply text-3xl;
+        @apply leading-normal;
     }
     h2 {
         @apply text-2xl;
+        @apply leading-normal;
     }
     h2 {
         @apply text-xl;
+        @apply leading-normal;
+    }
+    p {
+        @apply text-base;
     }
 }
 

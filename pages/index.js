@@ -8,20 +8,20 @@ import { postFilePaths, POSTS_PATH } from '../utils/mdxUtils'
 export default function Index({ posts }) {
   return (
     <Layout>
-      <h1 className="sm:text-5xl">The Pattern Garden</h1>
+      <h1 className="sm:text-4xl">The Pattern Garden</h1>
       <p>
         A library of patterns
       </p>
-      <ul>
+      <ul className="flex flex-wrap mt-16">
         {posts.map((post) => (
-          <li key={post.filePath}>
+          <li className="w-60 mr-8 mb-8 border" key={post.filePath}>
+            {post.data.image && <img src={post.data.image} />}
             <Link
               as={`/posts/${post.filePath.replace(/\.mdx?$/, '')}`}
               href={`/posts/[slug]`}
             >
-              <a>{post.data.title}</a>
+              <a><h2 className="leading-8">{post.data.title}</h2></a>
             </Link>
-            {post.data.image && <img src={post.data.image} />}
             {post.data.tags && post.data.tags.map((tag) => (<p>{tag}</p>))}
           </li>
         ))}

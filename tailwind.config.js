@@ -7,15 +7,32 @@ module.exports = {
   theme: {
     extend: {
       fontSize: {
-        // Set in Major Third typescale (1.25)
-        base: '1em',
-        lg: '1.25em',
-        xl: '1.563em',
-        '2xl': '1.953em',
-        '3xl': '2.441em',
-        '4xl': '3.052em',
-        '5xl': '3.815em',
+        // Set in Perfect Fourth typescale (1.33)
+        base: '1.25em',
+        lg: '1.66em',
+        xl: '2.21em',
+        '2xl': '2.94em',
+        '3xl': '3.91em',
+        '4xl': '5.2em',
+        '5xl': '6.92em',
       },
+      typography: (theme) => ({
+        default: {
+          css: {
+            color: theme('colors.black'),
+            a: {
+              color: theme('colors.blue.600'),
+              '&:hover': {
+                color: theme('colors.blue.700'),
+              },
+              '*': {
+                color: theme('colors.blue.600'),
+              },
+              code: {color: theme('colors.blue.600')},
+            },
+          },
+        },
+      }),
     },
   },
   variants: {
