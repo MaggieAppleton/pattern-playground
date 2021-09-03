@@ -8,7 +8,7 @@ import { postFilePaths, POSTS_PATH } from '../utils/mdxUtils'
 export default function Index({ posts }) {
   return (
     <Layout>
-      <h1 className="text-5xl">The Pattern Garden</h1>
+      <h1 className="sm:text-5xl">The Pattern Garden</h1>
       <p>
         A library of patterns
       </p>
