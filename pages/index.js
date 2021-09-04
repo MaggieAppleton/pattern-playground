@@ -17,7 +17,7 @@ export default function Index({ posts }) {
             </p>
             <ul className="flex flex-wrap mt-24">
                 {posts.map((post) => (
-                    <li className="w-80 mr-8 mb-8 border" key={post.filePath}>
+                    <li className="w-80 mr-10 mb-10" key={post.filePath}>
                         {post.data.image && <img src={post.data.image} />}
                         <Link
                             as={`/posts/${post.filePath.replace(
@@ -27,7 +27,7 @@ export default function Index({ posts }) {
                             href={`/posts/[slug]`}
                         >
                             <a>
-                                <h3 className="text-coolGray-600 text-xl">
+                                <h3 className="text-coolGray-600 text-xl leading-tight">
                                     {post.data.title}
                                 </h3>
                             </a>
