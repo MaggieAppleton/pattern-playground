@@ -5,7 +5,10 @@ module.exports = {
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {
+    extend:{
+      fontFamily: {
+        sans: ["Circular ProTT", ...defaultTheme.fontFamily.sans],
+      },
       fontSize: {
         // Set in Perfect Fourth typescale (1.33)
         base: '1.25em',
@@ -16,24 +19,7 @@ module.exports = {
         '4xl': '5.2em',
         '5xl': '6.92em',
       },
-      typography: (theme) => ({
-        default: {
-          css: {
-            color: theme('colors.black'),
-            a: {
-              color: theme('colors.blue.600'),
-              '&:hover': {
-                color: theme('colors.blue.700'),
-              },
-              '*': {
-                color: theme('colors.blue.600'),
-              },
-              code: {color: theme('colors.blue.600')},
-            },
-          },
-        },
-      }),
-    },
+    }
   },
   variants: {
     extend: {},

@@ -1,3 +1,5 @@
+@import url(/fonts/stylesheet.css);
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -17,6 +19,7 @@
     }
     p {
         @apply text-base;
+        @apply font-serif;
     }
 }
 
