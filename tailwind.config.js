@@ -1,34 +1,47 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
-const colors = require('tailwindcss/colors')
+const defaultTheme = require("tailwindcss/defaultTheme");
+const colors = require("tailwindcss/colors");
 
 module.exports = {
-  purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
-  darkMode: false, // or 'media' or 'class'
-  theme: {
-    extend:{
-      fontFamily: {
-        sans: ["Circular ProTT", ...defaultTheme.fontFamily.sans],
-      },
-      fontSize: {
-        // Set in Perfect Fourth typescale (1.33)
-        base: '1.25em',
-        lg: '1.66em',
-        xl: '2.21em',
-        '2xl': '2.94em',
-        '3xl': '3.91em',
-        '4xl': '5.2em',
-        '5xl': '6.92em',
-      },
-    }
-  },
-  variants: {
-    extend: {},
-  },
-  plugins: [
-    require('@tailwindcss/typography')
-    // https://github.com/tailwindlabs/tailwindcss-typography
-  ],
-}
+    purge: [
+        "./pages/**/*.{js,ts,jsx,tsx}",
+        "./components/**/*.{js,ts,jsx,tsx}",
+    ],
+    darkMode: false, // or 'media' or 'class'
+    theme: {
+        extend: {
+            fontFamily: {
+                sans: ["Object Sans", ...defaultTheme.fontFamily.sans],
+                body: ["IBM Plex Mono", ...defaultTheme.fontFamily.mono],
+            },
+            fontSize: {
+                // Set in Perfect Fourth typescale (1.33)
+                base: "1.25em",
+                lg: "1.66em",
+                xl: "2.21em",
+                "2xl": "2.94em",
+                "3xl": "3.91em",
+                "4xl": "5.2em",
+                "5xl": "6.92em",
+            },
+            colors: {
+                ...colors,
+                primary: colors.blue["500"],
+                secondary: colors.blue["700"],
+                accent: colors.blue["800"],
+                success: colors.green["500"],
+                warning: colors.orange["500"],
+                error: colors.red["500"],
+            },
+        },
+    },
+    variants: {
+        extend: {},
+    },
+    plugins: [
+        require("@tailwindcss/typography"),
+        // https://github.com/tailwindlabs/tailwindcss-typography
+    ],
+};
 
 // https://tailwindcss.com/docs/theme
 
