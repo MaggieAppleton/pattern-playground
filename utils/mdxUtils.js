@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 
-// POSTS_PATH is useful when you want to get the path to a specific file
+// PATTERNS_PATH is useful when you want to get the path to a specific file
 export const PATTERNS_PATH = path.join(process.cwd(), "posts", "patterns");
 export const EXPLORATIONS_PATH = path.join(
     process.cwd(),
@@ -9,8 +9,13 @@ export const EXPLORATIONS_PATH = path.join(
     "explorations"
 );
 
-// patternFilePath is the list of all mdx files inside the POSTS_PATH directory
+// patternFilePath is the list of all mdx files inside the PATTERNS_PATH directory
 export const patternFilePath = fs
     .readdirSync(PATTERNS_PATH)
+    // Only include md(x) files
+    .filter((path) => /\.mdx?$/.test(path));
+
+export const explorationFilePath = fs
+    .readdirSync(EXPLORATIONS_PATH)
     // Only include md(x) files
     .filter((path) => /\.mdx?$/.test(path));
