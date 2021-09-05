@@ -1,5 +1,5 @@
 /* @import url(/fonts/stylesheet.css); */
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,200;0,400;0,600;1,200;1,400;1,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,200;0,400;0,600;1,400&family=Poppins:wght@200;400&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -7,20 +7,32 @@
 
 @layer base {
     h1 {
-        @apply text-3xl;
+        @apply text-4xl;
         @apply leading-none;
+        @apply text-darkBlue;
     }
     h2 {
-        @apply text-2xl;
+        @apply text-3xl;
         @apply leading-none;
+        @apply text-mediumBlue;
     }
     h3 {
-        @apply text-xl;
+        @apply text-2xl;
         @apply leading-none;
+        @apply text-mediumBlue;
     }
     p {
         @apply text-base;
+        @apply text-mediumBlue;
     }
+}
+
+html {
+    background: white;
+    background: linear-gradient(to bottom, #fdf4f0 0%, #dadef1 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
 }
 
 /* https://tailwindcss.com/docs/adding-base-styles */

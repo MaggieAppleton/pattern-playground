@@ -10,27 +10,23 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ["Object Sans", ...defaultTheme.fontFamily.sans],
-                body: ["IBM Plex Mono", ...defaultTheme.fontFamily.mono],
+                sans: ["Poppins", ...defaultTheme.fontFamily.sans],
+                body: ["IBM Plex Sans", ...defaultTheme.fontFamily.mono],
             },
             fontSize: {
                 // Set in Perfect Fourth typescale (1.33)
-                base: "1.25em",
-                lg: "1.66em",
-                xl: "2.21em",
-                "2xl": "2.94em",
-                "3xl": "3.91em",
-                "4xl": "5.2em",
-                "5xl": "6.92em",
+                base: "1em",
+                lg: "1.333em",
+                xl: "1.777em",
+                "2xl": "2.369em",
+                "3xl": "3.157em",
+                "4xl": "4.2em",
+                "5xl": "5.61em",
             },
             colors: {
                 ...colors,
-                primary: colors.blue["500"],
-                secondary: colors.blue["700"],
-                accent: colors.blue["800"],
-                success: colors.green["500"],
-                warning: colors.orange["500"],
-                error: colors.red["500"],
+                darkBlue: "#230B5A",
+                mediumBlue: "#54496D",
             },
         },
     },

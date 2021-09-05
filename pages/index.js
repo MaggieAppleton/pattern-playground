@@ -4,21 +4,64 @@ import Link from "next/link";
 import path from "path";
 import Layout from "../components/Layout";
 import { patternFilePath, PATTERNS_PATH } from "../utils/mdxUtils";
+import { motion } from "framer-motion";
 
 export default function Index({ posts }) {
     return (
         <Layout>
-            <h1 className="sm:text-4xl text-coolGray-800 mb-6">
-                The Pattern Playground
-            </h1>
-            <p className="text-lg text-coolGray-600 font-light max-w-5xl leading-tight">
-                A collection of interface design patterns and speculative
-                experiments
-            </p>
-            <ul className="flex flex-wrap mt-24">
+            <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={{
+                    hidden: { opacity: 0, y: -50 },
+                    visible: {
+                        opacity: 1,
+                        y: 0,
+                        transition: {
+                            delay: 0.3,
+                            ease: "easeInOut",
+                            duration: 0.7,
+                        },
+                    },
+                }}
+            >
+                <h1 className="sm:text-4xl mb-6 font-bold">
+                    The Pattern Playground
+                </h1>
+                <p className="text-lg font-body max-w-5xl leading-tight">
+                    A collection of interface design patterns and speculative
+                    experiments
+                </p>
+            </motion.div>
+            <motion.ul
+                initial="hidden"
+                animate="show"
+                variants={{
+                    hidden: { opacity: 0, y: 50 },
+                    show: {
+                        opacity: 1,
+                        y: 0,
+                        transition: {
+                            delay: 0.3,
+                            ease: "easeInOut",
+                            duration: 0.7,
+                        },
+                    },
+                }}
+                className="flex flex-wrap mt-24"
+            >
                 {posts.map((post) => (
-                    <li className="w-80 mr-10 mb-10" key={post.filePath}>
-                        {post.data.image && <img src={post.data.image} />}
+                    <motion.li
+                        className="w-80 mr-6 mb-6 bg-white px-6 py-4 rounded-md"
+                        key={post.filePath}
+                        whileHover={{
+                            translateY: -5,
+                            transition: {
+                                duration: 0.3,
+                                ease: "easeInOut",
+                            },
+                        }}
+                    >
                         <Link
                             as={`/posts/${post.filePath.replace(
                                 /\.mdx?$/,
@@ -27,14 +70,18 @@ export default function Index({ posts }) {
                             href={`/posts/[slug]`}
                         >
                             <a>
-                                <h3 className="text-coolGray-600 text-xl leading-tight">
+                                {post.data.image && (
+                                    <img src={post.data.image} />
+                                )}
+
+                                <h3 className="text-xl leading-tight">
                                     {post.data.title}
                                 </h3>
                             </a>
                         </Link>
-                    </li>
+                    </motion.li>
                 ))}
-            </ul>
+            </motion.ul>
         </Layout>
     );
 }
