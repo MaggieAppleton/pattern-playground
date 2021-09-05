@@ -9,19 +9,25 @@ export default function Sidemenu({ filter, setFilter }) {
             className="flex flex-col space-y-1"
         >
             <button
-                className={filter === "all" && "bg-gray-400"}
+                className={`${
+                    filter === "all" && "bg-gray-400"
+                } flex justify-end`}
                 onClick={() => setFilter("all")}
             >
                 All
             </button>
             <button
-                className={filter === "pattern" && "bg-gray-400"}
+                className={`${
+                    filter === "pattern" && "bg-gray-400"
+                } flex justify-end`}
                 onClick={() => setFilter("pattern")}
             >
                 Patterns
             </button>
             <button
-                className={filter === "exploration" && "bg-gray-400"}
+                className={`${
+                    filter === "exploration" && "bg-gray-400"
+                } flex justify-end`}
                 onClick={() => setFilter("exploration")}
             >
                 Experiments
