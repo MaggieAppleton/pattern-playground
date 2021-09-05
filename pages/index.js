@@ -52,12 +52,12 @@ export default function Index({ posts }) {
             >
                 {posts.map((post) => (
                     <motion.li
-                        className="w-80 mr-6 mb-6 bg-white px-6 py-4 rounded-md"
+                        className="w-80 mr-6 mb-6 bg-white px-6 py-4 rounded-md shadow-sm"
                         key={post.filePath}
                         whileHover={{
                             translateY: -5,
                             transition: {
-                                duration: 0.3,
+                                duration: 0.4,
                                 ease: "easeInOut",
                             },
                         }}
