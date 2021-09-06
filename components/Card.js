@@ -25,10 +25,10 @@ export default function Card({ post }) {
                     </h3>
                 </a>
             </Link>
-            <p className="text-small font-sans font-light text-mediumBlue leading-snug mb-4">
+            <p className="text-small font-sans font-light text-neutralBlue leading-snug mb-4">
                 {post.data.description}
             </p>
-            <p className="text-small font-sans font-bold uppercase text-mediumBlue tracking-wide">
+            <p className="text-small font-sans font-bold uppercase text-neutralBlue tracking-wide">
                 {post.data.type}
             </p>
         </motion.li>
