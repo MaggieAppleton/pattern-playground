@@ -1,3 +1,7 @@
 export default function Prose({ children }) {
-    return <p className="max-w-4xl mb-8 leading-relaxed font-xl">{children}</p>;
+    return (
+        <p className="max-w-auto md:max-w-3xl mb-8 leading-relaxed text-lg">
+            {children}
+        </p>
+    );
 }

@@ -27,7 +27,9 @@ const components = {
     // It also works with dynamically-imported components, which is especially
     // useful for conditionally loading components for certain routes.
     // See the notes in README.md for more details.
-    TestComponent: dynamic(() => import("../../components/TestComponent")),
+    PercentageCalculator: dynamic(() =>
+        import("../../components/PercentageCalculator")
+    ),
     Head,
 };
 
@@ -43,7 +45,7 @@ export default function PatternPage({ source, frontMatter }) {
                     </p>
                 )}
             </div>
-            <main>
+            <main className="mb-36">
                 <MDXRemote {...source} components={components} />
             </main>
         </Layout>
