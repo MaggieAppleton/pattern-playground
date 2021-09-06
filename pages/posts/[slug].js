@@ -10,9 +10,9 @@ import CustomLink from "../../components/CustomLink";
 import Layout from "../../components/Layout";
 import {
     patternFilePath,
-    explorationFilePath,
+    playthingFilePath,
     PATTERNS_PATH,
-    EXPLORATIONS_PATH,
+    PLAYTHINGS_PATH,
 } from "../../utils/mdxUtils";
 
 // Custom components/renderers to pass to MDX.
@@ -51,17 +51,14 @@ export default function PatternPage({ source, frontMatter }) {
 
 export const getStaticProps = async ({ params }) => {
     const patternFilePath = path.join(PATTERNS_PATH, `${params.slug}.mdx`);
-    const explorationFilePath = path.join(
-        EXPLORATIONS_PATH,
-        `${params.slug}.mdx`
-    );
+    const playthingFilePath = path.join(PLAYTHINGS_PATH, `${params.slug}.mdx`);
 
     const isPattern = fs.existsSync(patternFilePath);
 
-    // If it is not in the patterns folder, it must be an exploration
+    // If it is not in the patterns folder, it must be an plaything
     const source = isPattern
         ? fs.readFileSync(patternFilePath)
-        : fs.readFileSync(explorationFilePath);
+        : fs.readFileSync(playthingFilePath);
 
     const { content, data } = matter(source);
 
@@ -89,13 +86,13 @@ export const getStaticPaths = async () => {
         // Map the path into the static paths object required by Next.js
         .map((slug) => ({ params: { slug } }));
 
-    const explorationsPath = explorationFilePath
+    const playthingsPath = playthingFilePath
         // Remove file extensions for page paths
         .map((path) => path.replace(/\.mdx?$/, ""))
         // Map the path into the static paths object required by Next.js
         .map((slug) => ({ params: { slug } }));
 
-    const paths = [...patternsPath, ...explorationsPath];
+    const paths = [...patternsPath, ...playthingsPath];
 
     return {
         paths,

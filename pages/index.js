@@ -4,12 +4,13 @@ import matter from "gray-matter";
 import Link from "next/link";
 import path from "path";
 import Layout from "../components/Layout";
-import Sidemenu from "../components/Sidemenu";
+import FilterMenu from "../components/FilterMenu";
+import Card from "../components/Card";
 import {
     patternFilePath,
     PATTERNS_PATH,
-    explorationFilePath,
-    EXPLORATIONS_PATH,
+    playthingFilePath,
+    PLAYTHINGS_PATH,
 } from "../utils/mdxUtils";
 import { motion } from "framer-motion";
 
@@ -44,11 +45,13 @@ export default function Index({ posts }) {
                     </h1>
                     <p className="text-lg font-body max-w-5xl leading-tight">
                         A collection of interface design patterns and
-                        speculative experiments
+                        speculative play
                     </p>
                 </motion.div>
-                <Sidemenu filter={filter} setFilter={setFilter} />
             </div>
+            <motion.div>
+                <FilterMenu filter={filter} setFilter={setFilter} />
+            </motion.div>
             <motion.ul
                 initial="hidden"
                 animate="show"
@@ -64,38 +67,10 @@ export default function Index({ posts }) {
                         },
                     },
                 }}
-                className="flex flex-wrap mt-24"
+                className="flex flex-wrap mt-6"
             >
                 {postsToShow.map((post) => (
-                    <motion.li
-                        className="w-80 mr-6 mb-6 bg-offWhite px-6 py-4 rounded-md shadow-sm"
-                        key={post.filePath}
-                        whileHover={{
-                            scale: 1.02,
-                            transition: {
-                                duration: 0.4,
-                                ease: "easeInOut",
-                            },
-                        }}
-                    >
-                        <Link
-                            as={`/posts/${post.filePath.replace(
-                                /\.mdx?$/,
-                                ""
-                            )}`}
-                            href={`/posts/[slug]`}
-                        >
-                            <a>
-                                {post.data.image && (
-                                    <img src={post.data.image} />
-                                )}
-
-                                <h3 className="text-xl leading-tight">
-                                    {post.data.title}
-                                </h3>
-                            </a>
-                        </Link>
-                    </motion.li>
+                    <Card key={post.data.title} post={post} />
                 ))}
             </motion.ul>
         </Layout>
@@ -114,8 +89,8 @@ export function getStaticProps() {
         };
     });
 
-    const explorationPosts = explorationFilePath.map((filePath) => {
-        const source = fs.readFileSync(path.join(EXPLORATIONS_PATH, filePath));
+    const playthingPosts = playthingFilePath.map((filePath) => {
+        const source = fs.readFileSync(path.join(PLAYTHINGS_PATH, filePath));
         const { content, data } = matter(source);
 
         return {
@@ -125,7 +100,7 @@ export function getStaticProps() {
         };
     });
 
-    const posts = [...patternPosts, ...explorationPosts];
+    const posts = [...patternPosts, ...playthingPosts];
 
     return { props: { posts } };
 }

@@ -3,11 +3,7 @@ import path from "path";
 
 // PATTERNS_PATH is useful when you want to get the path to a specific file
 export const PATTERNS_PATH = path.join(process.cwd(), "posts", "patterns");
-export const EXPLORATIONS_PATH = path.join(
-    process.cwd(),
-    "posts",
-    "explorations"
-);
+export const PLAYTHINGS_PATH = path.join(process.cwd(), "posts", "playthings");
 
 // patternFilePath is the list of all mdx files inside the PATTERNS_PATH directory
 export const patternFilePath = fs
@@ -15,7 +11,7 @@ export const patternFilePath = fs
     // Only include md(x) files
     .filter((path) => /\.mdx?$/.test(path));
 
-export const explorationFilePath = fs
-    .readdirSync(EXPLORATIONS_PATH)
+export const playthingFilePath = fs
+    .readdirSync(PLAYTHINGS_PATH)
     // Only include md(x) files
     .filter((path) => /\.mdx?$/.test(path));
