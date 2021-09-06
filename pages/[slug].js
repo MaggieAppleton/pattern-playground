@@ -7,6 +7,7 @@ import Head from "next/head";
 import Header from "../components/Header";
 import path from "path";
 import ProseLink from "../components/ProseLink";
+import FullWidthSection from "../components/FullWidthSection";
 import Prose from "../components/Prose";
 import Layout from "../components/Layout";
 import {
@@ -23,6 +24,7 @@ import {
 const components = {
     a: ProseLink,
     p: Prose,
+    FullWidthSection: FullWidthSection,
 
     PPP: dynamic(() => import("../components/unique/PPP")),
     PercentageCalculatorOne: dynamic(() =>
@@ -38,7 +40,7 @@ export default function PatternPage({ source, frontMatter }) {
     return (
         <Layout>
             <Header />
-            <div className="container mx-auto max-w-4xl mb-20">
+            <div className="container mx-auto max-w-3xl mb-20">
                 <h1 className="mt-12 mb-10 text-5xl font-bold leading-tight">
                     {frontMatter.title}
                 </h1>
@@ -48,7 +50,7 @@ export default function PatternPage({ source, frontMatter }) {
                     </p>
                 )}
             </div>
-            <main className="container mx-auto mb-36 max-w-4xl">
+            <main className="wrapper mb-36">
                 <MDXRemote {...source} components={components} />
             </main>
         </Layout>

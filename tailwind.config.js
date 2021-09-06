@@ -9,6 +9,13 @@ module.exports = {
     darkMode: false, // or 'media' or 'class'
     theme: {
         extend: {
+            gridTemplateColumns: {
+                wrapper: "1fr min(65ch 100%) 1fr",
+            },
+            gridColumn: {
+                2: "2",
+                "span-1/4": "1 / 4",
+            },
             fontFamily: {
                 sans: ["Poppins", ...defaultTheme.fontFamily.sans],
                 body: ["Inter", ...defaultTheme.fontFamily.sans],
