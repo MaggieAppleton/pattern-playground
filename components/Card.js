@@ -15,8 +15,8 @@ export default function Card({ post }) {
             }}
         >
             <Link
-                as={`/posts/${post.filePath.replace(/\.mdx?$/, "")}`}
-                href={`/posts/[slug]`}
+                as={`${post.filePath.replace(/\.mdx?$/, "")}`}
+                href={`[slug]`}
             >
                 <a>
                     {post.data.image && <img src={post.data.image} />}

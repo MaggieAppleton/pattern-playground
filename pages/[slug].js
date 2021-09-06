@@ -4,17 +4,17 @@ import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import dynamic from "next/dynamic";
 import Head from "next/head";
-import Header from "../../components/Header";
+import Header from "../components/Header";
 import path from "path";
-import ProseLink from "../../components/ProseLink";
-import Prose from "../../components/Prose";
-import Layout from "../../components/Layout";
+import ProseLink from "../components/ProseLink";
+import Prose from "../components/Prose";
+import Layout from "../components/Layout";
 import {
     patternFilePath,
     playthingFilePath,
     PATTERNS_PATH,
     PLAYTHINGS_PATH,
-} from "../../utils/mdxUtils";
+} from "../utils/mdxUtils";
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -24,12 +24,12 @@ const components = {
     a: ProseLink,
     p: Prose,
 
-    PPP: dynamic(() => import("../../components/unique/PPP")),
+    PPP: dynamic(() => import("../components/unique/PPP")),
     PercentageCalculatorOne: dynamic(() =>
-        import("../../components/unique/PercentageCalculatorOne")
+        import("../components/unique/PercentageCalculatorOne")
     ),
     PercentageCalculatorTwo: dynamic(() =>
-        import("../../components/unique/PercentageCalculatorTwo")
+        import("../components/unique/PercentageCalculatorTwo")
     ),
     Head,
 };
