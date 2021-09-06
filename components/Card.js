@@ -20,11 +20,17 @@ export default function Card({ post }) {
             >
                 <a>
                     {post.data.image && <img src={post.data.image} />}
-                    <h3 className="text-xl leading-tight">{post.data.title}</h3>
+                    <h3 className="text-xl leading-tight mb-4">
+                        {post.data.title}
+                    </h3>
                 </a>
             </Link>
-            <p>{post.data.description}</p>
-            <p>{post.data.type}</p>
+            <p className="text-small font-sans font-light text-mediumBlue leading-snug mb-4">
+                {post.data.description}
+            </p>
+            <p className="text-small font-sans font-bold uppercase text-mediumBlue tracking-wide">
+                {post.data.type}
+            </p>
         </motion.li>
     );
 }

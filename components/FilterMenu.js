@@ -6,28 +6,28 @@ export default function FilterMenu({ filter, setFilter }) {
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3, duration: 0.7 }}
-            className="flex flex-row space-x-1 mt-12"
+            className="flex flex-row bg-lightBlueOpacity mt-12 bg-mix-multiply rounded-md max-w-max p-1 border border-lightBlue"
         >
             <button
                 className={`${
-                    filter === "all" && "bg-gray-400"
-                } flex justify-end`}
+                    filter === "all" && "bg-offWhite text-darkBlue"
+                } flex justify-end px-4 py-2 rounded-md text-mediumBlue transition-all duration-300`}
                 onClick={() => setFilter("all")}
             >
                 All
             </button>
             <button
                 className={`${
-                    filter === "pattern" && "bg-gray-400"
-                } flex justify-end`}
+                    filter === "pattern" && "bg-offWhite text-darkBlue"
+                } flex justify-end px-4 py-2 rounded-md text-mediumBlue transition-all duration-300`}
                 onClick={() => setFilter("pattern")}
             >
                 Patterns
             </button>
             <button
                 className={`${
-                    filter === "plaything" && "bg-gray-400"
-                } flex justify-end`}
+                    filter === "plaything" && "bg-offWhite text-darkBlue"
+                } flex justify-end px-4 py-2 rounded-md text-mediumBlue transition-all duration-300`}
                 onClick={() => setFilter("plaything")}
             >
                 Playthings

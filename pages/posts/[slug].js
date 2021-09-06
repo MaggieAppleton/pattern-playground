@@ -4,9 +4,11 @@ import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import dynamic from "next/dynamic";
 import Head from "next/head";
+import Header from "../../components/Header";
 import Link from "next/link";
 import path from "path";
 import CustomLink from "../../components/CustomLink";
+import Prose from "../../components/Prose";
 import Layout from "../../components/Layout";
 import {
     patternFilePath,
@@ -21,6 +23,7 @@ import {
 // here.
 const components = {
     a: CustomLink,
+    p: Prose,
     // It also works with dynamically-imported components, which is especially
     // useful for conditionally loading components for certain routes.
     // See the notes in README.md for more details.
@@ -31,16 +34,14 @@ const components = {
 export default function PatternPage({ source, frontMatter }) {
     return (
         <Layout>
-            <header>
-                <nav>
-                    <Link href="/">
-                        <a>Go back home</a>
-                    </Link>
-                </nav>
-            </header>
-            <div>
-                <h1>{frontMatter.title}</h1>
-                {frontMatter.description && <p>{frontMatter.description}</p>}
+            <Header />
+            <div className="mb-12">
+                <h1 className="mt-12 mb-6">{frontMatter.title}</h1>
+                {frontMatter.description && (
+                    <p className="font-serif text-xl italic font-light max-w-4xl font-mediumBlue">
+                        {frontMatter.description}
+                    </p>
+                )}
             </div>
             <main>
                 <MDXRemote {...source} components={components} />
