@@ -38,15 +38,17 @@ export default function PatternPage({ source, frontMatter }) {
     return (
         <Layout>
             <Header />
-            <div className="mb-12">
-                <h1 className="mt-12 mb-6">{frontMatter.title}</h1>
+            <div className="container mx-auto max-w-4xl mb-20">
+                <h1 className="mt-12 mb-10 text-5xl font-bold leading-tight">
+                    {frontMatter.title}
+                </h1>
                 {frontMatter.description && (
-                    <p className="font-body text-xl italic font-light max-w-4xl font-mediumBlue">
+                    <p className="font-body text-lg font-light max-w-4xl font-mediumBlue">
                         {frontMatter.description}
                     </p>
                 )}
             </div>
-            <main className="mb-36 pl-36 py-12 bg-white rounded -ml-36">
+            <main className="container mx-auto mb-36 max-w-4xl">
                 <MDXRemote {...source} components={components} />
             </main>
         </Layout>
