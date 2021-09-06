@@ -5,9 +5,8 @@ import { serialize } from "next-mdx-remote/serialize";
 import dynamic from "next/dynamic";
 import Head from "next/head";
 import Header from "../../components/Header";
-import Link from "next/link";
 import path from "path";
-import CustomLink from "../../components/CustomLink";
+import ProseLink from "../../components/ProseLink";
 import Prose from "../../components/Prose";
 import Layout from "../../components/Layout";
 import {
@@ -22,13 +21,15 @@ import {
 // to handle import statements. Instead, you must include components in scope
 // here.
 const components = {
-    a: CustomLink,
+    a: ProseLink,
     p: Prose,
-    // It also works with dynamically-imported components, which is especially
-    // useful for conditionally loading components for certain routes.
-    // See the notes in README.md for more details.
-    PercentageCalculator: dynamic(() =>
-        import("../../components/PercentageCalculator")
+
+    PPP: dynamic(() => import("../../components/unique/PPP")),
+    PercentageCalculatorOne: dynamic(() =>
+        import("../../components/unique/PercentageCalculatorOne")
+    ),
+    PercentageCalculatorTwo: dynamic(() =>
+        import("../../components/unique/PercentageCalculatorTwo")
     ),
     Head,
 };
@@ -40,12 +41,12 @@ export default function PatternPage({ source, frontMatter }) {
             <div className="mb-12">
                 <h1 className="mt-12 mb-6">{frontMatter.title}</h1>
                 {frontMatter.description && (
-                    <p className="font-serif text-xl italic font-light max-w-4xl font-mediumBlue">
+                    <p className="font-body text-xl italic font-light max-w-4xl font-mediumBlue">
                         {frontMatter.description}
                     </p>
                 )}
             </div>
-            <main className="mb-36">
+            <main className="mb-36 pl-36 py-12 bg-white rounded -ml-36">
                 <MDXRemote {...source} components={components} />
             </main>
         </Layout>

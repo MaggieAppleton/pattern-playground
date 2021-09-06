@@ -11,7 +11,7 @@ module.exports = {
         extend: {
             fontFamily: {
                 sans: ["Poppins", ...defaultTheme.fontFamily.sans],
-                serif: ["Freight Text Pro", ...defaultTheme.fontFamily.serif],
+                body: ["Inter", ...defaultTheme.fontFamily.sans],
             },
             fontSize: {
                 // Set in Perfect Fourth typescale (1.33)
