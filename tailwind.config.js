@@ -36,7 +36,7 @@ module.exports = {
             },
             colors: {
                 ...colors,
-                lightPink: "#fdf4f0",
+                lightPink: "#F6E9E2",
                 lavender: "#dadef1",
                 darkBlue: "#230B5A",
                 mediumBlue: "#544674",
@@ -44,6 +44,7 @@ module.exports = {
                 lightBlue: "#DBDBE9",
                 lightBlueOpacity: "#DBDBE960",
                 offWhite: "#F5F5F5",
+                purple: "#4840BB",
             },
         },
     },

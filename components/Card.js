@@ -10,7 +10,7 @@ export default function Card({ post }) {
                     key={post.filePath}
                 >
                     {post.data.image && <img src={post.data.image} />}
-                    <h3 className="text-xl leading-tight mb-4 hover:text-darkBlue">
+                    <h3 className="text-xl leading-tight mb-4 hover:text-purple">
                         {post.data.title}
                     </h3>
 

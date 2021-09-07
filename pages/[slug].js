@@ -6,6 +6,7 @@ import dynamic from "next/dynamic";
 import Head from "next/head";
 import Header from "../components/Header";
 import path from "path";
+import Link from "next/link";
 import ProseLink from "../components/ProseLink";
 import FullWidthSection from "../components/FullWidthSection";
 import Prose from "../components/Prose";
@@ -41,7 +42,24 @@ export default function PatternPage({ source, frontMatter }) {
         <Layout>
             <Header />
             <div className="container mx-auto max-w-3xl mb-20">
-                <h1 className="mt-12 mb-10 text-5xl font-bold leading-tight">
+                <Link href="/">
+                    <a className="flex flow-col items-center text-mediumBlue opacity-60 hover:opacity-100 hover:text-purple transition-all duration-300 ease-in-out">
+                        {/* svg of arrow pointing left */}
+                        <svg
+                            className="h-6 w-6"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                        >
+                            <path
+                                fillRule="evenodd"
+                                d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                                clipRule="evenodd"
+                            ></path>
+                        </svg>
+                        Back to Index
+                    </a>
+                </Link>
+                <h1 className="mt-4 mb-10 text-5xl font-bold leading-tight">
                     {frontMatter.title}
                 </h1>
                 {frontMatter.description && (
