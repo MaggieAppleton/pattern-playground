@@ -22,7 +22,7 @@
         @apply text-mediumBlue;
     }
     p {
-        @apply text-lg;
+        @apply text-base;
         @apply text-mediumBlue;
         @apply font-body;
     }
