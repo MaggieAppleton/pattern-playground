@@ -6,12 +6,12 @@ export default function FilterMenu({ filter, setFilter }) {
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3, duration: 0.7 }}
-            className="flex flex-row bg-lightBlueOpacity mt-12 bg-mix-multiply rounded-md max-w-max border-2 border-lightBlue shadow-inner p-0.5"
+            className="flex flex-row bg-lightBlueOpacity mt-12 bg-mix-multiply rounded-md max-w-max border-2 border-lightBlue p-0.5"
         >
             <button
                 className={`${
                     filter === "all" && "bg-offWhite text-darkBlue"
-                } flex justify-end px-6 py-2 rounded-md text-mediumBlue transition-all duration-300`}
+                } flex justify-end px-6 py-2 rounded-sm text-mediumBlue transition-all duration-300`}
                 onClick={() => setFilter("all")}
             >
                 All
@@ -19,7 +19,7 @@ export default function FilterMenu({ filter, setFilter }) {
             <button
                 className={`${
                     filter === "pattern" && "bg-offWhite text-darkBlue"
-                } flex justify-end px-6 py-2 rounded-md text-mediumBlue transition-all duration-300`}
+                } flex justify-end px-6 py-2 rounded-sm text-mediumBlue transition-all duration-300`}
                 onClick={() => setFilter("pattern")}
             >
                 Patterns
@@ -27,7 +27,7 @@ export default function FilterMenu({ filter, setFilter }) {
             <button
                 className={`${
                     filter === "plaything" && "bg-offWhite text-darkBlue"
-                } flex justify-end px-6 py-2 rounded-md text-mediumBlue transition-all duration-300`}
+                } flex justify-end px-6 py-2 rounded-sm text-mediumBlue transition-all duration-300`}
                 onClick={() => setFilter("plaything")}
             >
                 Playthings

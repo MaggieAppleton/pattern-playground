@@ -42,7 +42,7 @@ module.exports = {
                 mediumBlue: "#544674",
                 neutralBlue: "#847E9D",
                 lightBlue: "#DBDBE9",
-                lightBlueOpacity: "#DBDBE970",
+                lightBlueOpacity: "#DBDBE960",
                 offWhite: "#F5F5F5",
             },
         },
