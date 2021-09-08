@@ -1,6 +1,13 @@
+import { motion } from "framer-motion";
+
 export default function Footer() {
     return (
-        <footer>
+        <motion.footer
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 50 }}
+            transition={{ duration: 0.5, ase: "easeInOut" }}
+        >
             <div className="flex items-center justify-center text-center py-20 ">
                 <p className="text-small font-sans">
                     A project by{" "}
@@ -12,6 +19,6 @@ export default function Footer() {
                     </a>
                 </p>
             </div>
-        </footer>
+        </motion.footer>
     );
 }

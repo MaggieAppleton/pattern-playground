@@ -9,6 +9,9 @@ module.exports = {
     darkMode: false, // or 'media' or 'class'
     theme: {
         extend: {
+            leading: {
+                tighter: "1.15rem",
+            },
             gridTemplateColumns: {
                 wrapper: "1fr min(65ch 100%) 1fr",
             },

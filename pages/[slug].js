@@ -52,7 +52,7 @@ export default function PatternPage({ source, frontMatter }) {
                         transition={{
                             duration: 0.6,
                             ease: "easeInOut",
-                            delay: 0.5,
+                            delay: 0.4,
                         }}
                         className="flex flow-col items-center text-mediumBlue opacity-60 hover:opacity-100 hover:text-purple transition-all duration-300 ease-in-out cursor-pointer"
                     >
@@ -79,7 +79,7 @@ export default function PatternPage({ source, frontMatter }) {
                         duration: 0.6,
                         ease: "easeInOut",
                     }}
-                    className="mt-4 mb-8 text-5xl font-bold leading-tight"
+                    className="mt-4 mb-6 text-4xl sm:text-5xl font-bold leading-tight"
                 >
                     {frontMatter.title}
                 </motion.h1>
@@ -92,13 +92,13 @@ export default function PatternPage({ source, frontMatter }) {
                             duration: 0.6,
                             ease: "easeInOut",
                         }}
-                        className="font-body text-lg font-light max-w-4xl font-mediumBlue"
+                        className="font-body text-lg font-light max-w-4xl text-purple leading-normal"
                     >
                         {frontMatter.description}
                     </motion.h2>
                 )}
             </div>
-            <div className="bg-offWhite -mx-20 px-6 pb-32">
+            <div className="bg-offWhite -mx-6 sm:-mx-14 md:-mx-20 px-6 pb-32">
                 <motion.main
                     initial={{ opacity: 0, x: -80 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -106,7 +106,7 @@ export default function PatternPage({ source, frontMatter }) {
                     transition={{
                         duration: 0.6,
                         ease: "easeInOut",
-                        delay: 0.5,
+                        delay: 0.4,
                     }}
                     className="wrapper pt-20"
                 >
