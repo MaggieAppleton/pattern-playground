@@ -5,6 +5,7 @@ import Link from "next/link";
 import path from "path";
 import Layout from "../components/Layout";
 import FilterMenu from "../components/FilterMenu";
+import Footer from "../components/Footer";
 import Card from "../components/Card";
 import {
     patternFilePath,
@@ -75,6 +76,7 @@ export default function Index({ posts }) {
                     ))}
                 </motion.ul>
             </div>
+            <Footer />
         </Layout>
     );
 }
