@@ -22,7 +22,7 @@ export default function Card({ post }) {
                             <>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
-                                    class="h-4 w-4 mr-1"
+                                    class="h-4 w-4 mr-1 text-purple"
                                     viewBox="0 0 20 20"
                                     fill="currentColor"
                                 >
@@ -33,13 +33,13 @@ export default function Card({ post }) {
                                     />
                                     <path d="M11 4a1 1 0 10-2 0v1a1 1 0 002 0V4zM10 7a1 1 0 011 1v1h2a1 1 0 110 2h-3a1 1 0 01-1-1V8a1 1 0 011-1zM16 9a1 1 0 100 2 1 1 0 000-2zM9 13a1 1 0 011-1h1a1 1 0 110 2v2a1 1 0 11-2 0v-3zM7 11a1 1 0 100-2H4a1 1 0 100 2h3zM17 13a1 1 0 01-1 1h-2a1 1 0 110-2h2a1 1 0 011 1zM16 17a1 1 0 100-2h-3a1 1 0 100 2h3z" />
                                 </svg>
-                                Pattern
+                                <span className="text-purple">Pattern</span>
                             </>
                         ) : (
                             <>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
-                                    class="h-4 w-4 mr-1"
+                                    class="h-4 w-4 mr-1 text-purple"
                                     viewBox="0 0 20 20"
                                     fill="currentColor"
                                 >
@@ -49,7 +49,7 @@ export default function Card({ post }) {
                                         clip-rule="evenodd"
                                     />
                                 </svg>{" "}
-                                Plaything
+                                <span className="text-purple">Plaything</span>
                             </>
                         )}
                     </div>

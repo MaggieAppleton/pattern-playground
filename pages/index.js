@@ -23,15 +23,45 @@ export default function Index({ posts }) {
             : posts.filter((post) => post.data.type.includes(filter));
 
     return (
-        <Layout>
-            <div className="mt-16 md:mt-24 xl:pl-32">
-                <div className="flex flex-row justify-between ">
-                    <motion.div
+        <>
+            <Layout>
+                <div className="mt-16 md:mt-28 xl:pl-32">
+                    <div className="flex flex-row justify-between ">
+                        <motion.div
+                            className="mb-8"
+                            initial="hidden"
+                            animate="visible"
+                            variants={{
+                                hidden: { opacity: 0, y: -50 },
+                                visible: {
+                                    opacity: 1,
+                                    y: 0,
+                                    transition: {
+                                        delay: 0.3,
+                                        ease: "easeInOut",
+                                        duration: 0.7,
+                                    },
+                                },
+                            }}
+                        >
+                            <h1 className="sm:text-5xl mb-8 font-bold">
+                                The Pattern Playground
+                            </h1>
+                            <h2 className="text-xl max-w-5xl leading-tight text-mediumBlue font-light opacity-75">
+                                A collection of interface design patterns and
+                                playful experiments
+                            </h2>
+                        </motion.div>
+                    </div>
+                    <motion.div>
+                        <FilterMenu filter={filter} setFilter={setFilter} />
+                    </motion.div>
+                    <motion.ul
                         initial="hidden"
-                        animate="visible"
+                        animate="show"
                         variants={{
-                            hidden: { opacity: 0, y: -50 },
-                            visible: {
+                            hidden: { opacity: 0, y: 50 },
+                            show: {
                                 opacity: 1,
                                 y: 0,
                                 transition: {
@@ -41,43 +71,17 @@ export default function Index({ posts }) {
                                 },
                             },
                         }}
+                        className="flex flex-wrap mt-6"
                     >
-                        <h1 className="sm:text-5xl mb-8 font-bold">
-                            The Pattern Playground
-                        </h1>
-                        <h2 className="text-xl max-w-5xl leading-tight text-mediumBlue font-light opacity-75">
-                            A collection of interface design patterns and
-                            playful experiments
-                        </h2>
-                    </motion.div>
+                        {postsToShow.map((post) => (
+                            <Card key={post.data.title} post={post} />
+                        ))}
+                    </motion.ul>
                 </div>
-                <motion.div>
-                    <FilterMenu filter={filter} setFilter={setFilter} />
-                </motion.div>
-                <motion.ul
-                    initial="hidden"
-                    animate="show"
-                    variants={{
-                        hidden: { opacity: 0, y: 50 },
-                        show: {
-                            opacity: 1,
-                            y: 0,
-                            transition: {
-                                delay: 0.3,
-                                ease: "easeInOut",
-                                duration: 0.7,
-                            },
-                        },
-                    }}
-                    className="flex flex-wrap mt-6"
-                >
-                    {postsToShow.map((post) => (
-                        <Card key={post.data.title} post={post} />
-                    ))}
-                </motion.ul>
-            </div>
+            </Layout>
+
             <Footer />
-        </Layout>
+        </>
     );
 }
 

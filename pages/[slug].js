@@ -11,6 +11,7 @@ import ProseLink from "../components/ProseLink";
 import FullWidthSection from "../components/FullWidthSection";
 import Prose from "../components/Prose";
 import Layout from "../components/Layout";
+import Footer from "../components/Footer";
 import {
     patternFilePath,
     playthingFilePath,
@@ -59,18 +60,21 @@ export default function PatternPage({ source, frontMatter }) {
                         Back to Index
                     </a>
                 </Link>
-                <h1 className="mt-4 mb-10 text-5xl font-bold leading-tight">
+                <h1 className="mt-4 mb-8 text-5xl font-bold leading-tight">
                     {frontMatter.title}
                 </h1>
                 {frontMatter.description && (
-                    <p className="font-body text-lg font-light max-w-4xl font-mediumBlue">
+                    <h2 className="font-body text-lg font-light max-w-4xl font-mediumBlue">
                         {frontMatter.description}
-                    </p>
+                    </h2>
                 )}
             </div>
-            <main className="wrapper mb-36">
-                <MDXRemote {...source} components={components} />
-            </main>
+            <div className="bg-offWhite -mx-20 px-6 pb-32">
+                <main className="wrapper  pt-20">
+                    <MDXRemote {...source} components={components} />
+                </main>
+            </div>
+            <Footer />
         </Layout>
     );
 }
