@@ -6,7 +6,7 @@ export default function FilterMenu({ filter, setFilter }) {
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3, duration: 0.7 }}
-            className="flex flex-row bg-lightBlue mt-12 rounded-md max-w-max border-2 border-lightBlue p-0.5"
+            className="flex flex-row bg-darkCream mt-12 rounded-md max-w-max p-0.5"
         >
             <button
                 className={`${

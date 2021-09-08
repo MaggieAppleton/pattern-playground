@@ -18,6 +18,7 @@ import {
     PATTERNS_PATH,
     PLAYTHINGS_PATH,
 } from "../utils/mdxUtils";
+import { motion } from "framer-motion";
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -44,7 +45,17 @@ export default function PatternPage({ source, frontMatter }) {
             <Header />
             <div className="container mx-auto max-w-3xl mb-20">
                 <Link href="/">
-                    <a className="flex flow-col items-center text-mediumBlue opacity-60 hover:opacity-100 hover:text-purple transition-all duration-300 ease-in-out">
+                    <motion.a
+                        initial={{ opacity: 0, y: -40 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 40 }}
+                        transition={{
+                            duration: 0.6,
+                            ease: "easeInOut",
+                            delay: 0.5,
+                        }}
+                        className="flex flow-col items-center text-mediumBlue opacity-60 hover:opacity-100 hover:text-purple transition-all duration-300 ease-in-out cursor-pointer"
+                    >
                         {/* svg of arrow pointing left */}
                         <svg
                             className="h-6 w-6"
@@ -58,21 +69,49 @@ export default function PatternPage({ source, frontMatter }) {
                             ></path>
                         </svg>
                         Back to Index
-                    </a>
+                    </motion.a>
                 </Link>
-                <h1 className="mt-4 mb-8 text-5xl font-bold leading-tight">
+                <motion.h1
+                    initial={{ opacity: 0, x: -40 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: 40 }}
+                    transition={{
+                        duration: 0.6,
+                        ease: "easeInOut",
+                    }}
+                    className="mt-4 mb-8 text-5xl font-bold leading-tight"
+                >
                     {frontMatter.title}
-                </h1>
+                </motion.h1>
                 {frontMatter.description && (
-                    <h2 className="font-body text-lg font-light max-w-4xl font-mediumBlue">
+                    <motion.h2
+                        initial={{ opacity: 0, x: -40 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: 40 }}
+                        transition={{
+                            duration: 0.6,
+                            ease: "easeInOut",
+                        }}
+                        className="font-body text-lg font-light max-w-4xl font-mediumBlue"
+                    >
                         {frontMatter.description}
-                    </h2>
+                    </motion.h2>
                 )}
             </div>
             <div className="bg-offWhite -mx-20 px-6 pb-32">
-                <main className="wrapper  pt-20">
+                <motion.main
+                    initial={{ opacity: 0, x: -80 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: 80 }}
+                    transition={{
+                        duration: 0.6,
+                        ease: "easeInOut",
+                        delay: 0.5,
+                    }}
+                    className="wrapper pt-20"
+                >
                     <MDXRemote {...source} components={components} />
-                </main>
+                </motion.main>
             </div>
             <Footer />
         </Layout>

@@ -29,8 +29,13 @@
 }
 
 html {
-    background: white;
-    background: linear-gradient(to bottom, #f1f0ed 0%, rgb(223, 224, 231) 100%);
+    background: #f3f2ef;
+    background: linear-gradient(
+        to bottom,
+        #f3f2ef 0%,
+        #f3f2ef 80%,
+        rgb(230, 231, 236) 100%
+    );
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
