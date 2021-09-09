@@ -11,7 +11,6 @@ import ProseLink from "../components/ProseLink";
 import FullWidthSection from "../components/FullWidthSection";
 import Prose from "../components/Prose";
 import Layout from "../components/Layout";
-import Footer from "../components/Footer";
 import {
     patternFilePath,
     playthingFilePath,
@@ -113,7 +112,6 @@ export default function PatternPage({ source, frontMatter }) {
                     <MDXRemote {...source} components={components} />
                 </motion.main>
             </div>
-            <Footer />
         </Layout>
     );
 }

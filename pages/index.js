@@ -5,7 +5,6 @@ import Link from "next/link";
 import path from "path";
 import Layout from "../components/Layout";
 import FilterMenu from "../components/FilterMenu";
-import Footer from "../components/Footer";
 import Card from "../components/Card";
 import {
     patternFilePath,
@@ -24,8 +23,11 @@ export default function Index({ posts }) {
 
     return (
         <>
-            <Layout>
-                <div className="mt-16 md:mt-28 xl:pl-32">
+            <Layout
+                title="Pattern Playground"
+                description="A collection of interface design patterns and playful experiments by Maggie Appleton"
+            >
+                <div className="mt-16 md:mt-28 xl:px-20">
                     <div className="flex flex-row justify-between ">
                         <motion.div
                             className="mb-8"
@@ -71,7 +73,7 @@ export default function Index({ posts }) {
                                 },
                             },
                         }}
-                        className="flex flex-wrap mt-6"
+                        className="flex flex-wrap mt-6 justify-center md:justify-start"
                     >
                         {postsToShow.map((post) => (
                             <Card key={post.data.title} post={post} />
@@ -79,8 +81,6 @@ export default function Index({ posts }) {
                     </motion.ul>
                 </div>
             </Layout>
-
-            <Footer />
         </>
     );
 }

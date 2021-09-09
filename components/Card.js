@@ -6,7 +6,7 @@ export default function Card({ post }) {
         <Link as={`${post.filePath.replace(/\.mdx?$/, "")}`} href={`[slug]`}>
             <a>
                 <li
-                    className="w-80 mr-6 mb-6 bg-offWhite px-6 py-5 rounded-md shadow-sm flex flex-col h-min transform hover:-translate-y-1 hover:shadow-md transition-all duration-300 ease-in-out"
+                    className="md:max-w-sm max-w-md mr-6 mb-6 bg-offWhite px-6 py-5 rounded-md shadow-sm flex flex-col h-min transform hover:-translate-y-1 hover:shadow-md transition-all duration-300 ease-in-out"
                     key={post.filePath}
                 >
                     {post.data.image && <img src={post.data.image} />}
