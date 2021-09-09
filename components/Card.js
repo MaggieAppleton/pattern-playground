@@ -18,10 +18,10 @@ export default function Card({ post }) {
                         {post.data.title}
                     </h3>
 
-                    <p className="text-small font-body font-motion.light text-neutralBlue leading-snug mb-4">
+                    <p className="text-small font-body font-motion.light text-mediumBlue leading-snug mb-4">
                         {post.data.description}
                     </p>
-                    <div className="text-micro font-body font-bold uppercase w-min pt-2 text-neutralBlue tracking-wide flex flex-row items-center self-end justify-self-end">
+                    <div className="text-micro font-body font-bold uppercase w-min pt-2 text-lightBlue tracking-wide flex flex-row items-center self-end justify-self-end">
                         {post.data.type === "pattern" ? (
                             <>
                                 <svg

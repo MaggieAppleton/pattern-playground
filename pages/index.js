@@ -49,7 +49,7 @@ export default function Index({ posts }) {
                             <h1 className="sm:text-5xl mb-8 font-bold">
                                 The Pattern Playground
                             </h1>
-                            <h2 className="text-xl max-w-5xl leading-tight text-mediumBlue font-light opacity-75">
+                            <h2 className="text-xl max-w-5xl leading-tight text-mediumBlue font-light">
                                 A collection of interface design patterns and
                                 playful experiments
                             </h2>

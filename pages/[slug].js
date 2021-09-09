@@ -41,7 +41,6 @@ const components = {
 export default function PatternPage({ source, frontMatter }) {
     return (
         <Layout>
-            <Header />
             <div className="container mx-auto max-w-3xl mb-10 sm:mb-20">
                 <motion.div
                     initial={{ opacity: 0, y: -40 }}
@@ -71,7 +70,7 @@ export default function PatternPage({ source, frontMatter }) {
                             Back to Index
                         </a>
                     </Link>
-                    <div className="text-micro font-body font-bold uppercase w-min pt-2 text-neutralBlue tracking-wide flex flex-row items-center self-end justify-self-end">
+                    <div className="text-micro font-body font-bold uppercase w-min pt-2 text-lightBlue tracking-wide flex flex-row items-center self-end justify-self-end">
                         {frontMatter.type === "pattern" ? (
                             <>
                                 <svg
