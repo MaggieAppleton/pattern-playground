@@ -42,7 +42,7 @@ export default function PatternPage({ source, frontMatter }) {
     return (
         <Layout>
             <Header />
-            <div className="container mx-auto max-w-3xl mb-20">
+            <div className="container mx-auto max-w-3xl mb-10 sm:mb-20">
                 <motion.div
                     initial={{ opacity: 0, y: -40 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -116,7 +116,7 @@ export default function PatternPage({ source, frontMatter }) {
                         duration: 0.6,
                         ease: "easeInOut",
                     }}
-                    className="mt-4 mb-6 text-4xl sm:text-5xl font-bold leading-tight"
+                    className="mt-4 mb-6 text-3xl sm:text-5xl font-bold leading-tight"
                 >
                     {frontMatter.title}
                 </motion.h1>
@@ -129,7 +129,7 @@ export default function PatternPage({ source, frontMatter }) {
                             duration: 0.6,
                             ease: "easeInOut",
                         }}
-                        className="font-body text-lg font-light max-w-4xl text-purple leading-normal"
+                        className="font-body text-base sm:text-lg font-light max-w-4xl text-purple leading-normal"
                     >
                         {frontMatter.description}
                     </motion.h2>
