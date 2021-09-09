@@ -29,6 +29,9 @@ const components = {
     FullWidthSection: FullWidthSection,
 
     PPP: dynamic(() => import("../components/unique/PPP")),
+    TubeNavigation: dynamic(() =>
+        import("../components/unique/TubeNavigation")
+    ),
     PercentageCalculatorOne: dynamic(() =>
         import("../components/unique/PercentageCalculatorOne")
     ),
