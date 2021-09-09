@@ -9,7 +9,7 @@ export default function Layout({ children, title, description }) {
                 description={description}
                 openGraph={{ title, description }}
             />
-            <main className="container mt-10 mb-6 md:max-w-screen-md lg:max-w-screen-lg xl:max-w-full mx-auto px-6 xl:px-12">
+            <main className="container mt-10 mb-6 md:max-w-screen-md lg:max-w-screen-lg xl:max-w-full mx-auto px-4 xl:px-8">
                 {children}
             </main>
         </div>

@@ -27,7 +27,7 @@ export default function Index({ posts }) {
                 title="Pattern Playground"
                 description="A collection of interface design patterns and playful experiments by Maggie Appleton"
             >
-                <div className="mt-16 md:mt-28 xl:px-20">
+                <div className="mt-16 md:mt-20 xl:px-20">
                     <div className="flex flex-row justify-between ">
                         <motion.div
                             className="mb-8"

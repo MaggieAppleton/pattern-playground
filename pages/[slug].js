@@ -4,7 +4,6 @@ import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import dynamic from "next/dynamic";
 import Head from "next/head";
-import Header from "../components/Header";
 import path from "path";
 import Link from "next/link";
 import ProseLink from "../components/ProseLink";
