@@ -5,7 +5,11 @@ export default function Card({ post }) {
     return (
         <Link as={`${post.filePath.replace(/\.mdx?$/, "")}`} href={`[slug]`}>
             <a>
-                <li
+                <motion.li
+                    variants={{
+                        hidden: { opacity: 0, y: 50 },
+                        show: { opacity: 1, y: 0 },
+                    }}
                     className="md:max-w-sm max-w-md mr-6 mb-6 bg-offWhite px-6 py-5 rounded-md shadow-sm flex flex-col h-min transform hover:-translate-y-1 hover:shadow-md transition-all duration-300 ease-in-out"
                     key={post.filePath}
                 >
@@ -14,7 +18,7 @@ export default function Card({ post }) {
                         {post.data.title}
                     </h3>
 
-                    <p className="text-small font-body font-light text-neutralBlue leading-snug mb-4">
+                    <p className="text-small font-body font-motion.light text-neutralBlue leading-snug mb-4">
                         {post.data.description}
                     </p>
                     <div className="text-micro font-body font-bold uppercase w-min pt-2 text-neutralBlue tracking-wide flex flex-row items-center self-end justify-self-end">
@@ -53,7 +57,7 @@ export default function Card({ post }) {
                             </>
                         )}
                     </div>
-                </li>
+                </motion.li>
             </a>
         </Link>
     );

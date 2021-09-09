@@ -62,14 +62,14 @@ export default function Index({ posts }) {
                         initial="hidden"
                         animate="show"
                         variants={{
-                            hidden: { opacity: 0, y: 50 },
+                            hidden: { opacity: 0 },
                             show: {
                                 opacity: 1,
-                                y: 0,
                                 transition: {
-                                    delay: 0.3,
+                                    delay: 0.8,
                                     ease: "easeInOut",
-                                    duration: 0.7,
+                                    staggerChildren: 0.2,
+                                    duration: 0.9,
                                 },
                             },
                         }}
